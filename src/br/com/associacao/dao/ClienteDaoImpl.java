@@ -95,6 +95,7 @@ public class ClienteDaoImpl implements Serializable{
                           "WHERE c.id = ?";
         
         try {
+            System.out.println("Teste de Github.");
             conexao = FabricaConexao.abrirConexao();
             preparando = conexao.prepareStatement(consulta);
             preparando.setInt(1, id);
