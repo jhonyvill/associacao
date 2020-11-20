@@ -25,7 +25,7 @@ public class ClienteDaoImplTest {
         clienteDaoImpl = new ClienteDaoImpl();
     }
 
-//    @Test
+    @Test
     public void testSalvar() throws Exception {
         System.out.println("Salvar");
         cliente = new Cliente(
@@ -49,7 +49,7 @@ public class ClienteDaoImplTest {
         clienteDaoImpl.salvar(cliente);
     }
 
-    @Test
+//    @Test
     public void testAlterar() throws Exception {
         System.out.println("Alterar");
         

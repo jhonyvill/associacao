@@ -18,10 +18,10 @@ import static org.junit.Assert.*;
  * @author Administrador
  */
 public class FornecedorDaoImplTest {
-    
+
     private Fornecedor fornecedor;
     private FornecedorDaoImpl fornecedorDaoImpl;
-    
+
     public FornecedorDaoImplTest() {
         fornecedorDaoImpl = new FornecedorDaoImpl();
     }
@@ -30,33 +30,34 @@ public class FornecedorDaoImplTest {
     public void testSalvar() throws Exception {
         System.out.println("salvar");
         List<Endereco> enderecos = new ArrayList<>();
+        //(Integer id, String nome, String email, String telefone, String cnpj, String inscricaoEstadual)
         fornecedor = new Fornecedor(
-                null, 
-                "Nome" + UtilGerador.gerarCaracter(10), 
-                UtilGerador.gerarNumero(10), 
-                UtilGerador.gerarNumero(5), 
-                UtilGerador.gerarEmail(), 
-                UtilGerador.gerarTelefoneFixo()
+                null,
+                "Nome" + UtilGerador.gerarCaracter(10),
+                UtilGerador.gerarEmail(),
+                UtilGerador.gerarTelefoneFixo(),
+                UtilGerador.gerarNumero(10),
+                UtilGerador.gerarNumero(5)
         );
-        
+
         for (int i = 0; i < 2; i++) {
             enderecos.add(gerarEndereco());
         }
         fornecedor.setEnderecos(enderecos);
         fornecedorDaoImpl.salvar(fornecedor);
     }
-    
-    private Endereco gerarEndereco(){
+
+    private Endereco gerarEndereco() {
         Endereco endereco = new Endereco(
-                null, 
-                "Rua " + UtilGerador.gerarCaracter(10), 
-                UtilGerador.gerarNumero(3), 
-                UtilGerador.gerarCaracter(10), 
-                UtilGerador.gerarCaracter(10), 
-                UtilGerador.gerarCaracter(2), 
+                null,
+                "Rua " + UtilGerador.gerarCaracter(10),
+                UtilGerador.gerarNumero(3),
+                UtilGerador.gerarCaracter(10),
+                UtilGerador.gerarCaracter(10),
+                UtilGerador.gerarCaracter(2),
                 UtilGerador.gerarNumero(5) + "-" + UtilGerador.gerarNumero(3)
         );
-        
+
         return endereco;
     }
 }
